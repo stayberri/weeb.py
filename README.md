@@ -1,10 +1,18 @@
 # weeb.py
+
+[![PyPI](https://img.shields.io/pypi/v/weeb.py.svg)](https://pypi.org/project/weeb.py/)
+[![PyPI](https://img.shields.io/pypi/pyversions/weeb.py.svg)](https://pypi.org/project/weeb.py/)
+
 An API wrapper in Python for weeb.sh!
 
 Weeb.sh is a private, invite only API for bot developers. In order to use this wrapper, you must have access to the API yourself. If you have access, make sure to replace all instances of "token" with your actual token, such as `Bearer <token>` or `Wolke <token>`, dependent on your token type. Bearer for BearerTokens and Wolke for WolkeTokens.
 
 Please note that the `generate_image`, `generate_status`, `generate_waifu_insult` and `generate_license` functions are locked to certain permission nodes. If you have never asked for these, you probably do not have them.
 
+# Installation
+```
+pip install weeb.py
+```
 # Documentation
 [Normal docs](https://gist.github.com/DasWolke/f9f8eb7bb9c4faeb10d33ab5bcc95898)\
 [Image gen docs](https://gist.github.com/DasWolke/3b1f884ac7779faab7e1026feed78b6c)
