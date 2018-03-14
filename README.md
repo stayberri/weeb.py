@@ -29,7 +29,7 @@ sh_client = weeb.Client(token="token", user_agent="Weeb.py/1.0.5")
                                     # User agent is formatted as NAME/VERSION
 
 async def async_thing():
-    types = await sh_client.get_types()
+    types = await sh_client.get_types()  # returns a list
     print(types)
 ```
 
@@ -42,7 +42,7 @@ sh_client = weeb.Client(token="token", user_agent="Weeb.py/1.0.5")
                                     # User agent is formatted as NAME/VERSION
 
 async def async_thing():
-    tags = await sh_client.get_tags()
+    tags = await sh_client.get_tags()  # returns a list
     print(tags)
 ```
 
@@ -55,7 +55,7 @@ sh_client = weeb.Client(token="token", user_agent="Weeb.py/1.0.5")
                                     # User agent is formatted as NAME/VERSION
 
 async def async_thing():
-img = await sh_client.get_image(imgtype='bite', nsfw=False, filetype="gif")
+    img = await sh_client.get_image(imgtype='bite', nsfw=False, filetype="gif")
     print(img[0])  # prints the image url
     print(img[1])  # prints the image ID
     print(img[2])  # prints the file type
@@ -105,7 +105,7 @@ async def async_thing():
         # this saves to the path you set it to, even if 'file.png' doesn't exist
 ```
 
-# Generate a License (Requires Lisence Scope)
+# Generate a License (Requires License Scope)
 
 ```python
 sh_client = weeb.Client(token="token", user_agent="Weeb.py/1.0.5")
