@@ -5,6 +5,10 @@ Weeb.sh is a private, invite only API for bot developers. In order to use this w
 
 Please note that the `generate_image`, `generate_status`, `generate_waifu_insult` and `generate_license` functions are locked to certain permission nodes. If you have never asked for these, you probably do not have them.
 
+#Documentation
+[Normal docs](https://gist.github.com/DasWolke/f9f8eb7bb9c4faeb10d33ab5bcc95898)\
+[Image gen docs](https://gist.github.com/DasWolke/3b1f884ac7779faab7e1026feed78b6c)
+
 # Examples
 Note that these functions must be awaited, and thus can only be used inside of an async function.
 ```python
