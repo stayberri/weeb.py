@@ -95,6 +95,8 @@ async def async_thing():
 # Generate a Waifu Insult (Requires Waifu-Image Scope)
 
 ```python
+import weeb
+
 sh_client = weeb.Client(token="token", user_agent="Weeb.py/1.0.5")
                                     # User agent is formatted as NAME/VERSIONN
 
@@ -108,6 +110,8 @@ async def async_thing():
 # Generate a License (Requires License Scope)
 
 ```python
+import weeb
+
 sh_client = weeb.Client(token="token", user_agent="Weeb.py/1.0.5")
                                     # User agent is formatted as NAME/VERSIONN
 
