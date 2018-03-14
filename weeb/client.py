@@ -13,7 +13,7 @@ class Client:
             raise AuthorizationError('Authorization type must be either Wolke or Bearer.')
         self.token = token
         self.agent = user_agent
-        self.__headers = {"Authorization": self.token, "User-Agent": self.agent if self.agent else 'Weeb.py/1.0.4'}
+        self.__headers = {"Authorization": self.token, "User-Agent": self.agent if self.agent else 'Weeb.py/1.0.5'}
 
     async def get_types(self):
         """Gets all available types.
@@ -72,7 +72,7 @@ class Client:
               f'&filetype={filetype}' if filetype else '')
         async with aiohttp.ClientSession() as session:
             async with session.get(url, headers=self.__headers) as resp:
-                if resp.status == 100:
+                if resp.status == 200:
                     js = await resp.json()
                     return [js['url'], js['id'], js['fileType']]
                 else:

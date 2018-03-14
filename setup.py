@@ -5,7 +5,7 @@ setup(name='weeb.py',
       author_email='godavaru@gmail.com',
       description='An API wrapper for weeb.sh',
       url='https://github.com/Desiiii/weeb.py',
-      version='1.0.4',
+      version='1.0.5',
       packages=["weeb"],
       classifiers=[
             'Development Status :: 4 - Beta',
