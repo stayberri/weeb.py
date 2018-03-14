@@ -22,7 +22,7 @@ Note that these functions must be awaited, and thus can only be used inside of a
 ```python
 import weeb
 
-client = weeb.Client(token="token", user_agent="Weeb.py/1.0.0")
+client = weeb.Client(token="token", user_agent="Weeb.py/1.0.2")
                     # User agent is formatted as NAME/VERSION
 
 async def some_async_func_or_event():

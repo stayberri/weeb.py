@@ -13,7 +13,7 @@ class Client:
             raise AuthorizationError('Authorization type must be either Wolke or Bearer.')
         self.token = token
         self.agent = user_agent
-        self.__headers = {"Authorization": self.token, "User-Agent": self.agent if self.agent else 'Weeb.py/1.0.0'}
+        self.__headers = {"Authorization": self.token, "User-Agent": self.agent if self.agent else 'Weeb.py/1.0.2'}
 
     async def get_types(self):
         """Gets all available types.
@@ -140,7 +140,7 @@ class Client:
         if not isinstance(avatar, str):
             raise TypeError("type of 'avatar' must be str.")
         async with aiohttp.ClientSession() as session:
-            async with session.get("https://api.weeb.sh/auto-image/waifu-insult", headers=self.__headers, data={"avatar": avatar}) as resp:
+            async with session.post("https://api.weeb.sh/auto-image/waifu-insult", headers=self.__headers, data={"avatar": avatar}) as resp:
                 if resp.status == 200:
                     return await resp.read()
                 else:
@@ -172,7 +172,7 @@ class Client:
         if widgets and len(widgets) <= 3:
             data['widgets'] = widgets
         async with aiohttp.ClientSession() as session:
-            async with session.get("https://api.weeb.sh/auto-image/waifu-insult", headers=self.__headers, data=data) as resp:
+            async with session.post("https://api.weeb.sh/auto-image/license", headers=self.__headers, data=data) as resp:
                 if resp.status == 200:
                     return await resp.read()
                 else:
