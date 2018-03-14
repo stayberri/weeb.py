@@ -13,7 +13,7 @@ class Client:
             raise AuthorizationError('Authorization type must be either Wolke or Bearer.')
         self.token = token
         self.agent = user_agent
-        self.__headers = {"Authorization": self.token, "User-Agent": self.agent if self.agent else 'Weeb.py/1.0.3'}
+        self.__headers = {"Authorization": self.token, "User-Agent": self.agent if self.agent else 'Weeb.py/1.0.4'}
 
     async def get_types(self):
         """Gets all available types.
@@ -67,7 +67,7 @@ class Client:
         if filetype and not isinstance(filetype, str):
             raise TypeError("type of 'filetype' must be str.")
         url = 'https://api.weeb.sh/images/random' + (f'?type={imgtype}' if imgtype else '') + (
-            f'{"?" if not imgtype else "&"}tags={",".join(tags)}' if len(tags) > 0 else '') + (
+            f'{"?" if not imgtype else "&"}tags={",".join(tags)}' if tags else '') + (
               f'&nsfw={nsfw.lower()}' if nsfw else '') + (f'&hidden={hidden}' if hidden else '') + (
               f'&filetype={filetype}' if filetype else '')
         async with aiohttp.ClientSession() as session:
