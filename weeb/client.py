@@ -13,7 +13,7 @@ class Client:
             raise AuthorizationError('Authorization type must be either Wolke or Bearer.')
         self.token = token
         self.agent = user_agent
-        self.__headers = {"Authorization": self.token, "User-Agent": self.agent if self.agent else 'Weeb.py/1.0.2'}
+        self.__headers = {"Authorization": self.token, "User-Agent": self.agent if self.agent else 'Weeb.py/1.0.3'}
 
     async def get_types(self):
         """Gets all available types.
@@ -54,7 +54,7 @@ class Client:
             filetype: str - the file type to get. Supported are jpg,jpeg,png,gif. (If not specified, all filetypes are grabbed)
 
         Return Type: `list` (returns as [url, id, filetype])"""
-        if not imgtype and len(tags) == 0:
+        if not imgtype and not tags:
             raise MissingTypeOrTags("'get_image' requires at least one of either type or tags.")
         if imgtype and not isinstance(imgtype, str):
             raise TypeError("type of 'imgtype' must be str.")
