@@ -177,3 +177,25 @@ class Client:
                     return await resp.read()
                 else:
                     raise Exception((await resp.json())['message'])
+
+    async def generate_love_ship(self, target_one, target_two):
+        """Generate a love ship.
+
+        This function is a coroutine.
+
+        Parameters:
+            target_one: str - http/s url pointing to an image, has to have proper headers and be a direct link to an image, image will be on the left side.
+            target_two: str - http/s url pointing to an image, has to have proper headers and be a direct link to an image, image will be on the left side.
+
+        Return Type: image data"""
+        if not isinstance(target_one, str):
+            raise TypeError("type of 'target_one' must be str.")
+        if not isinstance(target_two, str):
+            raise TypeError("type of 'target_two' must be str.")
+        data = {"targetOne": target_one, "targetTwo": target_two}
+        async with aiohttp.ClientSession() as session:
+            async with session.post("https://api.weeb.sh/auto-image/love-ship", headers=self.__headers, data=data) as resp:
+                if resp.status == 200:
+                    return await resp.read()
+                else:
+                    raise Exception((await resp.json())['message'])
