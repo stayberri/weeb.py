@@ -73,7 +73,6 @@ async def async_thing():
     # requires simpleimage gen scope. can be awooo, won, or eyes (awooo allows for hair and face as parameters to colour them)
     with open('./path/to/images/file.png', 'wb') as f:
         f.write(await sh_client.generate_image(imgtype='won'))
-        f.close()
         # this saves to the path you set it to, even if 'file.png' doesn't exist
 ```
 
@@ -88,7 +87,6 @@ sh_client = weeb.Client(token="token", user_agent="Weeb.py/1.1.0")
 async def async_thing():
     with open('./path/to/images/file.png', 'wb') as f:
         f.write(await sh_client.generate_status(status='online', avatar='https://cdn.discordapp.com/avatars/267207628965281792/f2f0b2f75710e334095132f33e15bce0.png'))
-        f.close()
         # this saves to the path you set it to, even if 'file.png' doesn't exist
 ```
 
@@ -103,7 +101,6 @@ sh_client = weeb.Client(token="token", user_agent="Weeb.py/1.1.0")
 async def async_thing():
     with open('./path/to/images/file.png', 'wb') as f:
         f.write(await sh_client.generate_waifu_insult(avatar='https://cdn.discordapp.com/avatars/267207628965281792/f2f0b2f75710e334095132f33e15bce0.png'))
-        f.close()
         # this saves to the path you set it to, even if 'file.png' doesn't exist
 ```
 
@@ -118,7 +115,6 @@ sh_client = weeb.Client(token="token", user_agent="Weeb.py/1.1.0")
 async def async_thing():
     with open('./path/to/images/file.png', 'wb') as f:
         f.write(await sh_client.generate_license(title="Spook License", avatar="https://imgur.com/zPn0DYT.png", badges=["https://imgur.com/zPn0DYT.png", "https://imgur.com/zPn0DYT.png", "https://imgur.com/zPn0DYT.png"], widgets=["1", "2", "3"]))
-        f.close()
         # this saves to the path you set it to, even if 'file.png' doesn't exist
 ```
 
@@ -133,6 +129,5 @@ sh_client = weeb.Client(token="token", user_agent="Weeb.py/1.1.0")
 async def async_thing():
     with open('./path/to/images/file.png', 'wb') as f:
         f.write(await sh_client.generate_love_ship(target_one="https://cdn.discordapp.com/avatars/267207628965281792/f2f0b2f75710e334095132f33e15bce0.png", target_two="https://cdn.discordapp.com/avatars/132584525296435200/8c7423df35ef1258db65451a011d63ca.png"))
-        f.close()
         # this saves to the path you set it to, even if 'file.png' doesn't exist
 ```
